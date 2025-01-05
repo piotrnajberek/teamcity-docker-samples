@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.1'
 
 
 # Default ${TEAMCITY_VERSION} is defined in .env file
@@ -10,12 +10,17 @@ version: '3.8'
 # ./agents/agent-1/conf - configuration directory for the second build agent
 
 services:
-  teamcity-agent-3:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  teamcity-agent-1:
+    image: docker.io/jetbrains/teamcity-agent:${TEAMCITY_VERSION}-linux-sudo
     privileged: true
     volumes:
       - ./agents/agent-1/conf:/data/teamcity_agent/conf
+    environment:
+      - DOCKER_IN_DOCKER=start
+  teamcity-agent-2:
+    image: docker.io/jetbrains/teamcity-agent:${TEAMCITY_VERSION}-linux-sudo
+    privileged: true
+    volumes:
+      - ./agents/agent-2/conf:/data/teamcity_agent/conf
     environment:
       - DOCKER_IN_DOCKER=start
