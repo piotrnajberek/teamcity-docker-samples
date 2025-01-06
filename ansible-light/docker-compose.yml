@@ -10,7 +10,7 @@ version: '3.1'
 # ./agents/agent-1/conf - configuration directory for the second build agent
 
 services:
-  teamcity-minimal-agent:
+  teamcity-agent:
     build:
       context: .
       dockerfile: Dockerfile
