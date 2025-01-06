@@ -19,7 +19,7 @@ services:
       - POSTGRES_DB=teamcity_db
       - PG_DATA=/var/lib/postgresql/data
     volumes:
-      - ./buildserver_pgdata:/var/lib/postgresql/data
+      - ./buildserver_pgdata:/var/lib/postgresql/data:Z
     ports:
       - 5433:5432
 
