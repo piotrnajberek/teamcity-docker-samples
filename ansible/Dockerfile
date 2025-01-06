@@ -1,5 +1,5 @@
 # Użyj oficjalnego obrazu TeamCity Agent jako bazowego
-FROM docker.io/jetbrains/teamcity-agent:${TEAMCITY_VERSION}-linux-sudo
+FROM docker.io/jetbrains/teamcity-agent:2024.12-linux-sudo
 
 # Zaloguj się jako root, aby mieć odpowiednie uprawnienia
 USER root
