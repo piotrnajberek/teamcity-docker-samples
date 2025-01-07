@@ -32,11 +32,12 @@ services:
       - ./teamcity-server-logs:/opt/teamcity/logs:Z
     depends_on:
       - db
-      
+
   phpmyadmin:
     image: docker.io/phpmyadmin
     environment:
       PMA_HOST: db
+      PMA_PORT: 5433
     ports:
       - "80:80"
     depends_on:
