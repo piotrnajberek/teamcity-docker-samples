@@ -32,3 +32,13 @@ services:
       - ./teamcity-server-logs:/opt/teamcity/logs:Z
     depends_on:
       - db
+
+  teamcity-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    privileged: true
+    volumes:
+      - ./agents/teamcity-agent/conf:/data/teamcity_agent/conf
+    environment:
+      - DOCKER_IN_DOCKER=start
