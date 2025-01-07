@@ -35,7 +35,7 @@ services:
 
   phppgadmin:
     restart: always
-    image: dockage/phppgadmin:latest
+    image: docker.io/dockage/phppgadmin:latest
     ports:
     - "80:80"
     - "443:443"
